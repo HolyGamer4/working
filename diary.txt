@@ -1,0 +1,6 @@
+Мария
+13.10 
+  11:20 созданы константы months и days
+  11:30 написана функция leap_year
+  11:50 написана функция amount_of_days 
+  12:12 в функции amount_of_days  days[cur_month] -> days[cur_month - 1] т.к итерация начинается с нуля.
