@@ -11,7 +11,7 @@ int leap_year(int cur_year) {
 }
 
 int amount_of_days(int cur_month, int cur_year) {
-    return (cur_month != 2 ? days[cur_month - 1] : (leap_year(cur_year) ? 29 : 28));
+    return (cur_month != 2 ? days[cur_month-1] : (leap_year(cur_year) ? 29 : 28));
 }
 
 // int start_day()
