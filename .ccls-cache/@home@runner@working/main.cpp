@@ -8,7 +8,19 @@ struct box {
   int year1;
   int day1;
 };
-const vector<box> tested_set = {{2, 2004, 29}, {4, 2005, 30}, {}};
+
+struct box2 {
+  int day2;
+  int month2;
+  int year2;
+  int pos;
+};
+
+const vector<box> tested_set = {{2, 2004, 29}, {4, 2005, 30}};
+const vector<box2> tested_set2 = {
+    {2, 5, 2004, 7},  {4, 6, 2006, 7},  {18, 9, 1996, 3}, {21, 12, 2013, 6},
+    {19, 4, 2027, 1}, {29, 2, 1996, 4}, {29, 2, 2012, 3}, {28, 2, 2011, 1},
+    {28, 2, 1919, 5}, {28, 2, 2029, 3}};
 
 const vector<string> months = {"ЯНВАРЬ",   "ФЕВРАЛЬ", "МАРТ",   "АПРЕЛЬ",
                                "МАЙ",      "ИЮНЬ",    "ИЮЛЬ",   "АВГУСТ",
@@ -28,8 +40,7 @@ int amount_of_days(int cur_month, int cur_year) {
 int day_position_in_week(int c_day, int month, int year) {
   int shift = shifts[month - 1];
   (leap_year(year) && month > 2) ? shift += 1 : shift;
-  year = (year - 1) % 400; // следующий кусок кода - это алгоритм нахождения,
-                           // найденный на просторах интернета))
+  year = (year - 1) % 400;
   int century = year / 100;
   int index = ((4 * century) + (year % 100)) % 28;
   int weekday = (index + (index / 4)) + shift + (c_day - 1);
@@ -58,9 +69,8 @@ void obr() {
   cout << "Введите номер месяца: ";
   cin >> cur_month;
   while (cur_month < 1 || cur_month > 12) {
-    cout << "Неверно введён месяц. Введите номер месяца от 1 до 12, где \n 1 - "
-            "январь \n 12 - декабрь"
-         << endl;
+    cout << "Неверно введён месяц. Введите номер месяца от 1 до 12, где 1 - "
+            "январь, 12 - декабрь: ";
     cin >> cur_month;
   }
   cout << "Введите номер года от 1919 до 2029: ";
@@ -69,7 +79,7 @@ void obr() {
     cout << "Неверно введён год. Введите число с 1919 до 2029: ";
     cin >> cur_year;
   }
-  grid_output(cur_month, cur_year); // подумать, что будет дальше -> done!!
+  grid_output(cur_month, cur_year);
 }
 
 void test() {
@@ -77,14 +87,16 @@ void test() {
     assert(amount_of_days(test_set.month1, test_set.year1) == test_set.day1);
   cout << "Тесты пройдены" << endl;
 }
+void test2() {
+  for (auto test_set : tested_set2)
+    assert(day_position_in_week(test_set.day2, test_set.month2,
+                                test_set.year2) == test_set.pos);
+  cout << "Тесты 2 пройдены" << endl;
+}
 
 int main() {
   test();
-  // obr(); // проблема: в фцнкции удаляются полученные значения cur_month и
-  // cur_year
-  // cout << amount_of_days(3, 1900);
-  // cout << day_position_in_week(10, 10, 2016);
-  // grid_output(10, 2022);
+  test2();
   obr();
   return 0;
 }
