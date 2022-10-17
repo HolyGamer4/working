@@ -16,7 +16,9 @@ struct box2 {
   int pos;
 };
 
-const vector<box> tested_set = {{2, 2004, 29}, {4, 2005, 30}};
+const vector<box> tested_set = {{2, 2004, 29}, {4, 2005, 30},{}};
+const int year_days = 365;
+const int v_year_days = 366;
 const vector<box2> tested_set2 = {
     {2, 5, 2004, 7},  {4, 6, 2006, 7},  {18, 9, 1996, 3}, {21, 12, 2013, 6},
     {19, 4, 2027, 1}, {29, 2, 1996, 4}, {29, 2, 2012, 3}, {28, 2, 2011, 1},
@@ -26,7 +28,6 @@ const vector<string> months = {"ЯНВАРЬ",   "ФЕВРАЛЬ", "МАРТ",  
                                "МАЙ",      "ИЮНЬ",    "ИЮЛЬ",   "АВГУСТ",
                                "СЕНТЯБРЬ", "ОКТЯБРЬ", "НОЯБРЬ", "ДЕКАБРЬ"};
 const vector<int> days = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-const int shifts[] = {0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5};
 
 int leap_year(int cur_year) {
   return (cur_year % 400 == 0 || (cur_year % 4 == 0 && cur_year % 100 != 0));
@@ -38,13 +39,17 @@ int amount_of_days(int cur_month, int cur_year) {
 }
 
 int day_position_in_week(int c_day, int month, int year) {
-  int shift = shifts[month - 1];
-  (leap_year(year) && month > 2) ? shift += 1 : shift;
-  year = (year - 1) % 400;
-  int century = year / 100;
-  int index = ((4 * century) + (year % 100)) % 28;
-  int weekday = (index + (index / 4)) + shift + (c_day - 1);
-  return (weekday % 7) + 1;
+  int gap_year = year - 1919;
+  int number_of_days = 0;
+  for (int i = 0; i < gap_year; i++){
+      number_of_days += leap_year(1919 + i) ? v_year_days : year_days;
+  }
+  for (int i = 1; i < month; i++) {
+      number_of_days += amount_of_days(i, year);
+  }
+  number_of_days += c_day - 1;
+  int position = ((number_of_days + 3) % 7);
+  return position == 0 ? 7 : position;
 }
 
 void grid_output(int month, int year) {
