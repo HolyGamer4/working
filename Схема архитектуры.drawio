@@ -1,1 +1,57 @@
-<mxfile host="app.diagrams.net" modified="2022-10-23T12:59:46.608Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37" version="20.5.1" etag="m8OGQeRL8DQJU8yIMdAk" type="github"><diagram id="XAxntFZM6T8HPxiPiH6y">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-10-23T13:18:45.583Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37" etag="O43nhn2RdUn2F0yd6CL0" version="20.5.1" type="github">
+  <diagram id="XAxntFZM6T8HPxiPiH6y" name="Страница 1">
+    <mxGraphModel dx="509" dy="569" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mehWwJax71jicgtBtX2A-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="mehWwJax71jicgtBtX2A-1" target="mehWwJax71jicgtBtX2A-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mehWwJax71jicgtBtX2A-1" value="main()&lt;br&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mehWwJax71jicgtBtX2A-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.011;entryY=0.15;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="mehWwJax71jicgtBtX2A-2" target="mehWwJax71jicgtBtX2A-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="260" y="179" />
+              <mxPoint x="260" y="179" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mehWwJax71jicgtBtX2A-2" value="test()" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mehWwJax71jicgtBtX2A-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="mehWwJax71jicgtBtX2A-3" target="mehWwJax71jicgtBtX2A-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="295" y="270" />
+              <mxPoint x="295" y="215" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mehWwJax71jicgtBtX2A-3" value="test2()" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mehWwJax71jicgtBtX2A-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="mehWwJax71jicgtBtX2A-8" target="mehWwJax71jicgtBtX2A-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="410" />
+              <mxPoint x="410" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mehWwJax71jicgtBtX2A-8" value="obr()&lt;br&gt;/* корректный ввод месяца и года */" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="290" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mehWwJax71jicgtBtX2A-10" value="grid_output()&lt;br&gt;/* вывод календаря */" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="460" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mehWwJax71jicgtBtX2A-15" value="int month, int&amp;nbsp;year" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="400" y="400" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
